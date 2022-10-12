@@ -22,7 +22,7 @@ module.exports = {
       repo: `${GIT_REPOSITORY}`,
       path: `${DESTINATION_PATH}`,
       'pre-deploy-local': `scp -Cr .env ${SSH_USERNAME}@${SSH_HOSTMACHINE}:${DESTINATION_PATH}`,
-      'post-deploy': 'npm i && npm run build && pm2 startOrRestart ecosystem.config.js --env production',
+      'post-deploy': 'npm i && pm2 startOrRestart ecosystem.config.js --env production',
     },
   },
 };
