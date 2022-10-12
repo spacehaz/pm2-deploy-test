@@ -1,15 +1,14 @@
-const sigUtil = require('@metamask/eth-sig-util')
-const ethUtil = require('ethereumjs-util')
+const express = require('express')
+const app = express()
+const dotenv = require('dotenv');
 
-  const encrypted_dashboard_key = ethUtil.bufferToHex(
-    Buffer.from(
-      JSON.stringify(
-        sigUtil.encrypt({
-          publicKey: '',
-          data: '',
-          version: 'x25519-xsalsa20-poly1305',
-        })
-      ),
-      'utf8'
-    )
-  )
+dotenv.config()
+const { PORT } = process.env
+
+app.get('/', (req, res) => {
+  res.send({
+    hello: 'world'
+  })
+})
+
+app.listen(PORT, () => console.log(`listening to ${PORT}`))
