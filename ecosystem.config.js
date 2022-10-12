@@ -7,7 +7,11 @@ const {
 } = process.env;
 
 module.exports = {
-  apps: [],
+  apps: [{
+    script: 'index.js',
+    instances: 'max',
+    exec_mode: 'cluster',
+  }],
 
   deploy: {
     production: {
