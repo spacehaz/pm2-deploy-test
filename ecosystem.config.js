@@ -16,6 +16,7 @@ module.exports = {
   deploy: {
     production: {
       user: `${SSH_USERNAME}`,
+      ssh_options: 'StrictHostKeyChecking=no',
       host: `${SSH_HOSTMACHINE}`,
       ref: `${GIT_REF}`,
       repo: `${GIT_REPOSITORY}`,
