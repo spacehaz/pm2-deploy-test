@@ -12,5 +12,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "pm2": "^5.2.0"
   }
 }
